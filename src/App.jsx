@@ -1,16 +1,29 @@
-import "./App.css";
-import Quiz from "./components/quiz";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import './App.css'
 
-function App() {
+export default function App() {
+  const [count, setCount] = useState(0)
+
   return (
-    <div className="app">
-      <div className="app-header">
-        <h1 className="app-title">🧠 React Quiz Master</h1>
-        <p className="app-subtitle">Test your knowledge and learn something new!</p>
+    <>
+      <div>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
       </div>
-      <Quiz />  
-    </div>
-  );
+      <h1>React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+        {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
+  )
 }
-
-export default App;
